@@ -12,10 +12,10 @@ def main():
     while True:
         streams = resolve_stream('type', 'EEG')
         inlet = StreamInlet(streams[0])
+        f = open("sauvegardeTest.txt", 'w')
         while True:
             sample, timestamp = inlet.pull_sample()
-            #print(timestamp, sample)
-            f = open("sauvegardeTest.txt", 'w')
+            print(timestamp, sample)
             for i in range(len(sample)):
                 f.write(str(timestamp))
                 f.write(" : ")
