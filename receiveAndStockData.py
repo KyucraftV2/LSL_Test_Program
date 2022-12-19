@@ -14,8 +14,15 @@ def main():
         inlet = StreamInlet(streams[0])
         while True:
             sample, timestamp = inlet.pull_sample()
-            print(timestamp, sample)
-
+            #print(timestamp, sample)
+            f = open("sauvegardeTest.txt", 'w')
+            for i in range(len(sample)):
+                f.write(str(timestamp))
+                f.write(" : ")
+                f.write(str(sample[i]))
+                f.write("\n")
+            f.write("\n")
+        f.close()
 
 if __name__ == "__main__":
     main()

@@ -16,7 +16,7 @@ def main(argv: List[str]):
         opts,args = getopt.getopt(argv,"hs:c:n:t:",["srate=", "channels=", "name=", "type"])
         #opts est une liste de tuple (option,value) et args est la liste d'arguments non utilisés par getopt
     except getopt.GetoptError: #une erreur peut etre levé a cause du dernier parametre de getopt
-        print("Erreur bizarre faut que je cherche ce que c'est")
+        print("Erreur de getopt, vérifiez les paramètres")
 
     for opt,arg in opts : #Va récupérer après la commande le taux de sample, nombre de channels par sample, le nom et enfin le type du stream
         if opt=="-h":
